@@ -58,19 +58,11 @@ app.get('/places/:city', (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-app.get('/legend/:place', (req, res) => {
-    const place = req.params.place;
-    console.log('Request received for place:', place);
-
-    const query = 'SELECT fact FROM legend WHERE place = ?';
-=======
 
 // Route to get legend by place
 app.get('/legend/:place', (req, res) => {
     const place = req.params.place;
     const query = 'SELECT fact, image_url FROM legend WHERE place = ?';
->>>>>>> 10dcf98b5f4b7e3b6ff3afbb1d75fc277236c624
     db.query(query, [place], (err, results) => {
         if (err) {
             console.error('Database error:', err);
